@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "description": "A  multi-hop food delivery system, where orders are transferred between multiple delivery agents in an optimized relay fashion to reduce delivery time and operational cost",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.js"
   },
   "author": "Samarth Patel",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.9",
+    "prettier": "^3.4.2"
+  }
 }
