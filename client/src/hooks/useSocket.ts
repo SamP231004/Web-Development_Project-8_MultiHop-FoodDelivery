@@ -3,12 +3,12 @@ import { socket } from "../services/socket";
 
 export const useSocket = (orderId: string, onUpdate: any) => {
     useEffect(() => {
-        socket.emit("join_order", orderId);
+        socket.emit("order:join", { orderId });
 
-        socket.on("location_update", onUpdate);
+        socket.on("order:update", onUpdate);
 
         return () => {
-            socket.off("location_update", onUpdate);
+            socket.off("order:update", onUpdate);
         };
-    }, [orderId]);
+    }, [orderId, onUpdate]);
 };
